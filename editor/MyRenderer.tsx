@@ -1,53 +1,61 @@
-import React from 'react';
-import {RendererEditor, BasicEditor} from 'amis-editor';
+import { BasePlugin } from 'amis-editor';
+import {registerEditorPlugin} from 'amis-editor';
 
-@RendererEditor('my-renderer', {
-    name: '自定义渲染器',
-    description: '这只是个示例',
-    // docLink: '/docs/renderers/Nav',
-    type: 'my-renderer',
-    previewSchema: {
-        // 用来生成预览图的
-        type: 'my-renderer',
-        target: 'demo'
-    },
-    scaffold: {
-        // 拖入组件里面时的初始数据
-        type: 'my-renderer',
-        target: '233'
-    }
-})
-export default class MyRendererEditor extends BasicEditor {
-    tipName = '自定义组件';
-    settingsSchema = {
-        title: '自定义组件配置',
-        controls: [
-            {
-                type: 'tabs',
-                tabsMode: 'line',
-                className: 'm-t-n-xs',
-                contentClassName: 'no-border p-l-none p-r-none',
-                tabs: [
-                    {
-                        title: '常规',
-                        controls: [
-                            {
-                                name: 'target',
-                                label: 'Target',
-                                type: 'text'
-                            }
-                        ]
-                    },
+export class MyRendererPlugin extends BasePlugin {
+	rendererName = 'my-renderer';
 
-                    {
-                        title: '外观',
-                        controls: []
-                    }
-                ]
-            }
-        ]
-    };
+	// 暂时只支持这个，配置后会开启代码编辑器
+	$schema = '/schemas/UnkownSchema.json';
 
-    // 配置表单一些简单的基本上够用了。
-    // 还有一些逻辑可以复写来自定义的，但是我现在没时间写说明了。
+	// 用来配置名称和描述
+	name = '自定义渲染器';
+	description = '这只是个示例';
+
+	// tag，决定会在哪个 tab 下面显示的
+	tags = [ '自定义', '表单项' ];
+
+	// 图标
+	icon = 'fa fa-user';
+
+	// 用来生成预览图的
+	previewSchema = {
+		type: 'my-renderer',
+		target: 'demo'
+	};
+
+	// 拖入组件里面时的初始数据
+	scaffold = {
+		type: 'my-renderer',
+		target: '233'
+	};
+
+	// 右侧面板相关
+	panelTitle = '自定义组件';
+	panelControls = [
+		{
+			type: 'tabs',
+			tabsMode: 'line',
+			className: 'm-t-n-xs',
+			contentClassName: 'no-border p-l-none p-r-none',
+			tabs: [
+				{
+					title: '常规',
+					controls: [
+						{
+							name: 'target',
+							label: 'Target',
+							type: 'text'
+						}
+					]
+				},
+
+				{
+					title: '外观',
+					controls: []
+				}
+			]
+		}
+	];
 }
+
+registerEditorPlugin(MyRendererPlugin);
