@@ -2,7 +2,7 @@ import React from 'react';
 import {RouteComponentProps, withRouter} from 'react-router';
 import {inject, observer} from 'mobx-react';
 import {getEnv} from 'mobx-state-tree';
-import {IMainStore} from '../store';
+import {IMainStore} from '../store/IMainStore';
 import qs from 'qs';
 import {render, utils, filter} from 'amis';
 

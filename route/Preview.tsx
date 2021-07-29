@@ -1,6 +1,6 @@
 import React from 'react';
 import {observer, inject} from 'mobx-react';
-import {IMainStore} from '../store';
+import {IMainStore} from '../store/IMainStore';
 import {Button, AsideNav, Layout, confirm} from 'amis';
 import {RouteComponentProps, matchPath, Switch, Route} from 'react-router';
 import {Link} from 'react-router-dom';

@@ -64,3 +64,6 @@ gh-pages
 /public
 
 package-lock.json
+
+# misc
+.DS_Store

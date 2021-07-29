@@ -1,7 +1,7 @@
 import React from 'react';
 import { Editor } from 'amis-editor';
 import { inject, observer } from 'mobx-react';
-import { IMainStore } from '../store';
+import { IMainStore } from '../store/IMainStore';
 import { RouteComponentProps } from 'react-router-dom';
 import { Layout, Switch, classnames as cx, toast } from 'amis';
 import '../renderer/MyRenderer';
