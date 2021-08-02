@@ -166,7 +166,7 @@ export function schema2component(schema: any, transform?: Function, session: str
             body = render(
                 finalSchema,
                 {
-                    location,
+                    // location,
                     data: utils.createObject({
                         ...match.params,
                         amisStore: store,

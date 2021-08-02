@@ -18,7 +18,7 @@ export default observer(function({ store }: { store: IMainStore }) {
 					<Switch>
 						<Redirect to={`/hello-world`} from={`/`} exact />
 						<Route path="/edit/:id" component={Editor} />
-						{/* <Route path="/edit/:id" component={Login} /> */}
+						<Route path="/login" component={Login} />
 						<Route component={Preview} />
 					</Switch>
 				</React.Suspense>

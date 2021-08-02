@@ -6,12 +6,7 @@ import { RouteComponentProps } from 'react-router-dom';
 import { render as renderAmis, Layout, Switch, classnames as cx, toast } from 'amis';
 
 export default inject('store')(
-	observer(function({
-		store,
-		location,
-		history,
-		match
-	}: { store: IMainStore } & RouteComponentProps<{ id: string }>) {
+	observer(function({ store, location, history, match }: { store: IMainStore } & RouteComponentProps) {
 		console.log(store);
 
 		return (
@@ -25,6 +20,7 @@ export default inject('store')(
 								title: '水平模式',
 								mode: 'horizontal',
 								api: 'http://httpbin.org/post',
+								redirect: '/hello-world',
 								body: [
 									{
 										type: 'input-text',
