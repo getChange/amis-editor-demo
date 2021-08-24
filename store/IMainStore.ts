@@ -25,7 +25,7 @@ export const MainStore = types
 		preview: false,
 		isMobile: false,
 		schema: types.frozen(),
-        userInfo: types.frozen()
+		userInfo: types.frozen()
 	})
 	.views((self) => ({
 		get fetcher() {
@@ -59,7 +59,6 @@ export const MainStore = types
 		}
 
 		function addPage(data: { label: string; path: string; icon?: string; schema?: any }) {
-            console.log(self)
 			self.pages.push(
 				PageStore.create({
 					...data,
@@ -114,7 +113,7 @@ export const MainStore = types
 			updateSchema,
 			setPreview,
 			setIsMobile,
-			afterCreate,
+			afterCreate
 		};
 	});
 

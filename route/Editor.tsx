@@ -19,7 +19,6 @@ if (/^\/amis-editor-demo/.test(window.location.pathname)) {
 }
 
 const schemaUrl = `${host}/schema.json`;
-console.log(schemaUrl)
 
 // @ts-ignore
 __uri('amis/schema.json');
