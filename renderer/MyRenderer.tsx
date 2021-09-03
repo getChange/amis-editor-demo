@@ -1,4 +1,4 @@
-import { registerEditorPlugin } from 'amis-editor';
+// import { registerEditorPlugin } from 'amis-editor';
 import { Renderer } from 'amis';
 import { RendererProps } from 'amis/lib/factory';
 import React from 'react';
@@ -10,7 +10,8 @@ export interface MyRendererProps extends RendererProps {
 	test: /\bmy-renderer$/,
 	name: 'my-renderer'
 })
-class MyRenderer extends React.Component<MyRendererProps> {
+
+export default class MyRenderer extends React.Component<MyRendererProps> {
 	static defaultProps = {
 		target: 'test'
 	};
@@ -21,4 +22,4 @@ class MyRenderer extends React.Component<MyRendererProps> {
 		return <p>Hello {target}!</p>;
 	}
 }
-registerEditorPlugin(MyRenderer);
+// registerEditorPlugin(MyRenderer);

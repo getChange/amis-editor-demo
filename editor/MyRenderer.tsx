@@ -1,5 +1,5 @@
 import { BasePlugin } from 'amis-editor';
-import {registerEditorPlugin} from 'amis-editor';
+import { registerEditorPlugin } from 'amis-editor';
 
 export class MyRendererPlugin extends BasePlugin {
 	rendererName = 'my-renderer';
@@ -12,7 +12,7 @@ export class MyRendererPlugin extends BasePlugin {
 	description = '这只是个示例';
 
 	// tag，决定会在哪个 tab 下面显示的
-	tags = [ '自定义', '表单项' ];
+	tags = [ '自定义' ];
 
 	// 图标
 	icon = 'fa fa-user';
@@ -26,7 +26,7 @@ export class MyRendererPlugin extends BasePlugin {
 	// 拖入组件里面时的初始数据
 	scaffold = {
 		type: 'my-renderer',
-		target: '233'
+		target: 'init'
 	};
 
 	// 右侧面板相关
@@ -51,7 +51,13 @@ export class MyRendererPlugin extends BasePlugin {
 
 				{
 					title: '外观',
-					controls: []
+					controls: [
+						{
+							name: 'target',
+							label: 'Target',
+							type: 'text'
+						}
+					]
 				}
 			]
 		}
