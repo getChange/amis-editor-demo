@@ -82,19 +82,19 @@ export default inject('store')(
 			);
 		}
 
-		return (
-			<Layout header={renderHeader()} headerFixed={false}>
-				<Editor
-					theme={'default'}
-					preview={store.preview}
-					value={store.schema}
-					onChange={(value: any) => store.updateSchema(value)}
-					className="is-fixed"
-					$schemaUrl={schemaUrl}
-					iframeUrl={iframeUrl}
-					isMobile={store.isMobile}
-				/>
-			</Layout>
-		);
-	})
+        return (
+            <Layout header={renderHeader()} headerFixed={false}>
+                <Editor
+                    theme={'cxd'}
+                    preview={store.preview}
+                    value={store.schema}
+                    onChange={(value: any) => store.updateSchema(value)}
+                    className="is-fixed"
+                    $schemaUrl={schemaUrl}
+                    iframeUrl={iframeUrl}
+                    isMobile={store.isMobile}
+                />
+            </Layout>
+        );
+    })
 );
